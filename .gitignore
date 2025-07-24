@@ -1,3 +1,6 @@
+/build/*
+.cache/*
+
 # Prerequisites
 *.d
 
@@ -39,3 +42,7 @@
 
 # debug information files
 *.dwo
+
+# python bytecode
+*.pyc
+*.pyo
