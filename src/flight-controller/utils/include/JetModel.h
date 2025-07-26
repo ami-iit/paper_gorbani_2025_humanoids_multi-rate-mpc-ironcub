@@ -8,7 +8,6 @@
 #define JET_MODEL_H
 
 #include <Eigen/Dense>
-#include <memory>
 #include <unsupported/Eigen/Polynomials>
 #include <yarp/os/Searchable.h>
 
@@ -23,42 +22,6 @@ public:
      * @brief Construct a JetModel object with inputs.
      */
     JetModel();
-    /**
-     * @brief Configure Models with param from config file
-     * @param config
-     * @return None.
-     */
-    bool configModels(yarp::os::Searchable& config);
-    /**
-     * @brief Get the scalar value from the configuration file.
-     * @param config configuration parameters;
-     * @param scalarName name of the scalar parameter;
-     * @param scalar pointer to the scalar value.
-     * @return True if the scalar value is found in the configuration file, false otherwise.
-     */
-    bool getCoeffFromConfig(yarp::os::Searchable& config,
-                            std::string coeffName,
-                            std::vector<double>* coeff);
-    /**
-     * @brief Get the scalar value from the configuration file.
-     * @param config configuration parameters;
-     * @param scalarName name of the scalar parameter;
-     * @param scalar pointer to the scalar value.
-     * @return True if the scalar value is found in the configuration file, false otherwise.
-     */
-    bool getScalarFromConfig(yarp::os::Searchable& config, std::string scalarName, double* scalar);
-    /**
-     * @brief Get the TMax parameter value.
-     * @param TMax pointer to the TMax value.
-     * @return None.
-     */
-    void getTMax(double* TMax);
-    /**
-     * @brief Get the TMin parameter value.
-     * @param TMin pointer to the TMin value.
-     * @return None.
-     */
-    void getTMin(double* TMin);
 
     /* Ambient correction*/
 
@@ -77,88 +40,6 @@ public:
      * @return ambient correction value.
      */
     double getAmbientCorrection();
-
-    /* dt */
-
-    /**
-     * @brief Set the value of the sampling period dt
-     * @return None.
-     */
-    void setDt(double dt);
-    /**
-     * @brief Get the value of the sampling period dt
-     * @return None.
-     */
-    void getDt(double* dt);
-
-    /* T2RPM and RPM2T models */
-
-    /**
-     * @brief Convert thrust to RPM.
-     * @return RPM value.
-     */
-    double T2RPM(double thrust);
-    /**
-     * @brief Convert RPM to thrust.
-     * @return thrust value.
-     */
-    double RPM2T(double krpm);
-    /**
-     * @brief Standardize the thrust value for the RPM2T model.
-     * @return None.
-     */
-    double standardizeThrust_RPM2T(double thrust);
-    /**
-     * @brief Standardize the RPM value for the RPM2T model.
-     * @return None.
-     */
-    double standardizeRPM_RPM2T(double krpm);
-    /**
-     * @brief Denormalize the thrust value for the RPM2T model.
-     * @return None.
-     */
-    double destandardizeThrust_RPM2T(double thrustBar);
-    /**
-     * @brief Denormalize the krpm value for the RPM2T model.
-     * @return None.
-     */
-    double destandardizeRPM_RPM2T(double krpmBar);
-
-    /* RPM2u model */
-
-    /**
-     * @brief Convert RPM to throttle.
-     * @return Throttle value.
-     */
-    double RPM2u(double krpm);
-
-    /* T2u model */
-
-    /**
-     * @brief Convert thrust to throttle.
-     * @return Throttle value.
-     */
-    double T2u(double thrust);
-    /**
-     * @brief Standardize the thrust value for the T2u model.
-     * @return None.
-     */
-    double standardizeThrust_T2u(double thrust);
-    /**
-     * @brief Standardize the throttle value for the T2u model.
-     * @return None.
-     */
-    double standardizeThrottle_T2u(double throttle);
-    /**
-     * @brief Denormalize the throttle value for the T2u model.
-     * @return None.
-     */
-    double destandardizeThrottle_T2u(double throttleBar);
-    /**
-     * @brief Get the thrust standard deviation value for the T2u model.
-     * @return thrust standard deviation value.
-     */
-    double getThrustStandardDeviation_T2u();
 
     /* u2T model */
 
@@ -188,11 +69,6 @@ public:
      * @return Tddot value.
      */
     double Tddot(double T, double Tdot, double u);
-    /**
-     * @brief Performs 1-step prediction given the state x
-     * @return next value of the state xnext.
-     */
-    Eigen::VectorXd predict(Eigen::VectorXd x, double u);
     /**
      * @brief Standardize the thrust value for the u2T model.
      * @return None.
@@ -251,23 +127,11 @@ public:
 
 private:
     // parameters of models
-    double m_TMax, m_TMin;
     double m_airTemperature;
     double m_ambientCorrection;
     std::vector<double> m_ambientCoeff;
-    std::vector<double> m_rpm2TCoeff;
-    std::vector<double> m_u2rpmCoeff;
-    std::vector<double> m_T2uCoeff;
     std::vector<double> m_u2TCoeff;
     std::vector<double> m_u2Tnormalization;
-    std::vector<double> m_T2u_normalization;
-    std::vector<double> m_RPM2Tnormalization;
-    // time step
-    double m_dt;
-    // no of states
-    int m_nStates{2};
-    // unscented kalman Filter class
-    friend class UnscentedKF;
 };
 
 #endif /* end of include guard JET_MODEL_H */

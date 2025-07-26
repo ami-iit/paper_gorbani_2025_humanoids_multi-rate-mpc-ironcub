@@ -14,10 +14,10 @@
 #include <yarp/os/LogStream.h>
 
 /**
- * @class IQPProblem
+ * @class IMPCProblem
  * @brief An abstract class to define a Quadratic Programming (QP) problem.
  *
- * The IQPProblem class provides an interface for configuring, updating, and solving a QP
+ * The IMPCProblem class provides an interface for configuring, updating, and solving a QP
  * problem. It stores the problem's variables, constraints, costs, and solution. Derived classes
  * can override the protected virtual functions to customize the behavior of the QP problem.
  */

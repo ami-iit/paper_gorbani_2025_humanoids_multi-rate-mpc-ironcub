@@ -6,8 +6,6 @@ set(FLIGHT_CONTROLLER_LIBRARIES src/FlightControlUtils.cpp
                                 src/IQPProblem.cpp
                                 src/IQPCost.cpp
                                 src/IQPConstraint.cpp
-                                src/GainScheduling.cpp
-                                src/QPExample.cpp
                                 src/QPInput.cpp
                                 src/TrajectoryManager.cpp
                                 src/JetModel.cpp)
@@ -17,8 +15,6 @@ set(FLIGHT_CONTROLLER_LIBRARIES_HDR include/FlightControlUtils.h
                                 include/IQPProblem.h
                                 include/IQPCost.h
                                 include/IQPConstraint.h
-                                include/GainScheduling.h
-                                include/QPExample.h
                                 include/QPInput.h
                                 include/TrajectoryManager.h
                                 include/JetModel.h)
