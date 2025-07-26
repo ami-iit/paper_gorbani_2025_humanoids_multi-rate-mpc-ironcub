@@ -1,7 +1,3 @@
-# Create __init__.py
-# set(NEW_LINE "\n")
-# message(STATUS "Ready to modify ${PYTHON_FLIGHT_CONTROL_BUILD_DIR}/__init__.py")
-# file(APPEND "${PYTHON_FLIGHT_CONTROL_BUILD_DIR}/__init__.py" "from . import bindings${NEW_LINE}")
 
 # Create the Python module using Pybind11
 pybind11_add_module(bindings flightCtrlPyBindings.cpp)

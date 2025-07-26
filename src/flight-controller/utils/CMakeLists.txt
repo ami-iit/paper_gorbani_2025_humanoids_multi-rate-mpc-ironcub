@@ -3,7 +3,6 @@
 set(FLIGHT_CONTROLLER_LIBRARIES src/FlightControlUtils.cpp
                                 src/ExternalWrenches.cpp
                                 src/Robot.cpp
-                                src/IQPProblem.cpp
                                 src/IQPCost.cpp
                                 src/IQPConstraint.cpp
                                 src/QPInput.cpp
@@ -12,7 +11,6 @@ set(FLIGHT_CONTROLLER_LIBRARIES src/FlightControlUtils.cpp
 set(FLIGHT_CONTROLLER_LIBRARIES_HDR include/FlightControlUtils.h
                                 include/ExternalWrenches.h
                                 include/Robot.h
-                                include/IQPProblem.h
                                 include/IQPCost.h
                                 include/IQPConstraint.h
                                 include/QPInput.h

@@ -1,6 +1,5 @@
 #include "ExternalWrenches.h"
 #include "FlightControlUtils.h"
-#include "PyIQPProblem.h"
 #include "QPInput.h"
 #include "Robot.h"
 #include "swig.h"
@@ -266,14 +265,6 @@ PYBIND11_MODULE(bindings, m)
              })
         .def("getRPYReference", &QPInput::getRPYReference)
         .def("getPosCoMReference", &QPInput::getPosCoMReference);
-
-    // For the IQPProblem class
-    py::class_<IQPProblem, PyIQPProblem>(m, "IQPProblem")
-        .def(py::init<>())
-        .def("setCostAndConstraints",
-             &IQPProblem::setCostAndConstraints,
-             py::arg("parametersHandler"),
-             py::arg("qpInput"));
 
     /************************************************************************/
     /************************* ExternalWrenches class ***********************/
