@@ -115,6 +115,7 @@ void ReferenceTrackingCost::configureDynVectorsSize(QPInput& qpInput)
     this->setLinearMomentumReference(m_linearMomentumReference);
     this->setRPYReference(m_RPYReference);
     this->setAngularMomentumReference(m_angularMomentumReference);
+    m_counter = (m_ratioSmallLargeStepsPeriod - 1);
 }
 
 const bool ReferenceTrackingCost::computeHessianAndGradient(QPInput& qpInput)

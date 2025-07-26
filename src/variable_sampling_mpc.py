@@ -9,23 +9,21 @@ from pathlib import Path
 import scipy.io
 import mujoco
 
-OUTPUT_VIDEO_PATH = 'simulation_record.mp4'
-FRAME_RATE = 30       # Video frame rate (Hz)
 SAVE_DATA = True
 MAX_TRAJECTORY_LENGTH = 20000
 
 if __name__ == "__main__":
+
+    rf = flightCtrl.ResourceFinder()
 
     toml_file_path = Path(__file__).parents[0] / "config/configMujoco.toml"
 
     configSim = MujocoConfig(toml.load(toml_file_path))
 
     robot_config_file = Path(__file__).parents[0] / "config/robot.toml"
-
-    robot_config_file = Path(__file__).parents[0] / "config/robot.toml"
     configSim.config["robot_config_file"] = str(robot_config_file)
 
-    xml_path = Path(__file__).parents[0] / "robot/iRonCub.xml"
+    xml_path = rf.findFileByName("iRonCub-Mk3_Mujoco/iRonCub.xml")
     configSim.config["mujoco_model_path"] = str(xml_path)
 
     run_viz = True
@@ -46,16 +44,6 @@ if __name__ == "__main__":
     sim.set_alpha_LP(MPCPeriod, 3)
     periodSim = sim.get_simulation_timestep()
     n_steps = int(MPCPeriod / periodSim)
-    body_id = sim.model.body("root_link").id
-    force_at_rl = np.zeros(3)
-    torque_at_rl = np.zeros(3)
-
-    torque_at_rl[0] = -250.0
-    force_at_rl[1] = 40.0
-
-    # torque_at_rl[1] = 300.0
-    # force_at_rl[0] = 50.0
-    sim.data.xfrc_applied[body_id] = 0.0
 
     initial_throttle = np.zeros(4)
     estimated_thrust = sim.get_estimated_thrust()
@@ -72,7 +60,6 @@ if __name__ == "__main__":
     qpInput.setEstimatedThrustDot(estimated_thrust_dot)
     qpInput.setOutputQPJointsPosition(sim.get_joint_positions())
     measured_joint_positions = sim.get_joint_positions()
-    # print("measured_joint_positions:", measured_joint_positions)
     sim.set_joint_positions(measured_joint_positions)
     for _ in range(2 * 200):
         sim.step(n_steps)
@@ -119,8 +106,7 @@ if __name__ == "__main__":
     counter_video = 0
     time_sum = 0
 
-    # while sim.is_running():
-    for _ in range(n_iter):
+    while sim.is_running():
         sim.update_robot_state()
         estim_thrust_dot = sim.get_estimated_thrust_dot()
         qpInput.setEstimatedThrustDot(estim_thrust_dot)
