@@ -46,3 +46,7 @@
 # python bytecode
 *.pyc
 *.pyo
+
+*.TXT
+
+*.mat
