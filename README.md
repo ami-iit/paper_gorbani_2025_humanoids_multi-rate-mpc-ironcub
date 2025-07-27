@@ -4,6 +4,7 @@ Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot
 
 <div align="center">
 Davide Gorbani , Giuseppe L'Erario, Hosameldin Awadalla Omer Mohamed, Daniele Pucci
+</div>
 <br>
 
 <div align="center">
