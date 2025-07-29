@@ -36,11 +36,11 @@
       <param name="weightRegularizationJointPos">20.0</param>
 
       <group name="TRAJECTORY_MANAGER">
-        <param name="trajectoryFile">"alphaGravityMPC10Hz.mat"</param>
+        <param name="trajectoryFile">"alphaGravity.mat"</param>
       </group>
 
       <group name="POSITION_TRAJECOTRY">
-        <param name="trajectoryFile">"squareTrajectory10Hz.mat"</param>
+        <param name="trajectoryFile">"minimumJerkTrajectory.mat"</param>
       </group>
 
       <param name="thrustMin">0.0</param>
