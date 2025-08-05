@@ -28,6 +28,7 @@ git clone https://github.com/ami-iit/paper_gorbani_2025_humanoids_multi-rate-mpc
 
 Create the `conda` environment:
 ```sh
+cd paper_gorbani_2025_humanoids_multi-rate-mpc-ironcub
 conda env create -f environment.yml
 ```
 
