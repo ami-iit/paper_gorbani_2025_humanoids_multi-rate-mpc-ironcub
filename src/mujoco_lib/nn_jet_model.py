@@ -107,18 +107,3 @@ class JetModelTotal:
                 next_T_dot_all_jets[i] = self._denormalize_thrust_dot(T_dot_norm_i.squeeze())
             
         return next_T_all_jets, next_T_dot_all_jets
-
-
-if __name__ == "__main__":
-    # Example usage (uncomment to test):
-    model_total = JetModelTotal() # Uses default model path
-    T_k = torch.ones(4) * 10.0  # Initial thrusts for 4 jets
-    throttle_cmd = torch.ones(4) * 50.0 # Throttle command for 4 jets
-    dt_sim = 0.01 # Simulation timestep
-
-    for i in range(1000):
-        T_next, T_dot_next = model_total.get_state(T_k, throttle_cmd, dt_sim)
-        print("Next Thrusts:", T_next)
-        print("Next Thrust Derivatives:", T_dot_next)
-    pass # Keep main guard for potential future tests
-
