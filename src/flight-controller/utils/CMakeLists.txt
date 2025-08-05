@@ -1,7 +1,6 @@
 
 # Install the FlightControlLibrary
 set(FLIGHT_CONTROLLER_LIBRARIES src/FlightControlUtils.cpp
-                                src/ExternalWrenches.cpp
                                 src/Robot.cpp
                                 src/IQPCost.cpp
                                 src/IQPConstraint.cpp
@@ -9,7 +8,6 @@ set(FLIGHT_CONTROLLER_LIBRARIES src/FlightControlUtils.cpp
                                 src/TrajectoryManager.cpp
                                 src/JetModel.cpp)
 set(FLIGHT_CONTROLLER_LIBRARIES_HDR include/FlightControlUtils.h
-                                include/ExternalWrenches.h
                                 include/Robot.h
                                 include/IQPCost.h
                                 include/IQPConstraint.h

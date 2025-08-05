@@ -1,4 +1,3 @@
-#include "ExternalWrenches.h"
 #include "FlightControlUtils.h"
 #include "QPInput.h"
 #include "Robot.h"
@@ -265,21 +264,6 @@ PYBIND11_MODULE(bindings, m)
              })
         .def("getRPYReference", &QPInput::getRPYReference)
         .def("getPosCoMReference", &QPInput::getPosCoMReference);
-
-    /************************************************************************/
-    /************************* ExternalWrenches class ***********************/
-    /************************************************************************/
-
-    py::class_<ExternalWrenches>(m, "ExternalWrenches")
-        .def(py::init<>())
-        .def("configure",
-             &ExternalWrenches::configure,
-             py::arg("parametersHandler"),
-             py::arg("prefixReadPortNameList") = "")
-        .def("read", &ExternalWrenches::read, py::arg("shouldWait") = false)
-        .def("closePort", &ExternalWrenches::closePort)
-        .def("getRefFrameNames", &ExternalWrenches::getRefFrameNames)
-        .def("getValues", &ExternalWrenches::getValues);
 
     /************************************************************************/
     /*********************** Mathematics related class **********************/
