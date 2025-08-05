@@ -1,9 +1,3 @@
-/**
- * @file JetModel.h
- * @author Gabriele Nava
- * @author Hosameldin Mohamed
- * @date 2024
- */
 #ifndef JET_MODEL_H
 #define JET_MODEL_H
 
