@@ -1,13 +1,5 @@
-/**
- * @file JetModel.cpp
- * @author Gabriele Nava
- * @author Hosameldin Mohamed
- * @date 2024
- */
 #include "JetModel.h"
 #include <cmath>
-#include <iostream>
-#include <sstream>
 #include <yarp/os/Bottle.h>
 #include <yarp/os/Log.h>
 #include <yarp/os/LogStream.h>
@@ -32,6 +24,7 @@ JetModel::JetModel()
                   -1.45705257e+00,
                   -7.83052261e-03};
     m_u2Tnormalization = {108.309, 65.793, 47.333, 31.483};
+    m_ambientCoeff = {-0.00621661, 1.13212876};
     m_ambientCorrection = m_ambientCoeff[0] * m_airTemperature + m_ambientCoeff[1];
 }
 

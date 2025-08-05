@@ -14,7 +14,8 @@ Davide Gorbani , Giuseppe L'Erario, Hosameldin Awadalla Omer Mohamed, Daniele Pu
 
 <div align="center">
    <a href="https://arxiv.org/abs/2505.16478"><b>📚 arXiv</b></a> &nbsp;&nbsp;&nbsp;
-    <a href="#Installation"><b>🔧 Code</b></a>
+    <a href="#Installation"><b>🔧 Installation</b></a> &nbsp;&nbsp;&nbsp;
+    <a href="#Usage"><b>🔧 Usage</b></a>
 </div>
 <br>
 
@@ -27,6 +28,7 @@ git clone https://github.com/ami-iit/paper_gorbani_2025_humanoids_multi-rate-mpc
 
 Create the `conda` environment:
 ```sh
+cd paper_gorbani_2025_humanoids_multi-rate-mpc-ironcub
 conda env create -f environment.yml
 ```
 
@@ -43,6 +45,12 @@ Then, to source the `setup.sh` file, run:
 source <path/to/install/folder>/share/setup.sh
 ```
 
+## Usage
+
+To run a simulation, open a terminal, navigate to the root folder of this repo and run:
+```sh
+python src/variable_sampling_mpc.py
+```
 
 ## Maintainers
 

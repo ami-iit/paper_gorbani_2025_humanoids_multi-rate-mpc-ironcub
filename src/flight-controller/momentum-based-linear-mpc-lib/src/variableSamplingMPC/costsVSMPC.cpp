@@ -46,7 +46,7 @@ const bool ReferenceTrackingCost::readConfigParameters(
     }
     auto paramHandlerYarpImpl
         = std::make_shared<BipedalLocomotion::ParametersHandler::YarpImplementation>();
-    auto group = ptr->getGroup("POSITION_TRAJECOTRY");
+    auto group = ptr->getGroup("POSITION_TRAJECTORY");
     if (group.lock() == nullptr)
     {
         yError() << "Group [TRAJECTORY_MANAGER] not found in the config file.";
