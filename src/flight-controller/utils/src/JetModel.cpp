@@ -25,6 +25,7 @@ JetModel::JetModel()
                   -7.83052261e-03};
     m_u2Tnormalization = {108.309, 65.793, 47.333, 31.483};
     m_ambientCoeff = {-0.00621661, 1.13212876};
+    m_airTemperature = 20.0; // default air temperature in Celsius
     m_ambientCorrection = m_ambientCoeff[0] * m_airTemperature + m_ambientCoeff[1];
 }
 
