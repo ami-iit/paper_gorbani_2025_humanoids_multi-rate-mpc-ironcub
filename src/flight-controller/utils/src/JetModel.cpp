@@ -24,30 +24,7 @@ JetModel::JetModel()
                   -1.45705257e+00,
                   -7.83052261e-03};
     m_u2Tnormalization = {108.309, 65.793, 47.333, 31.483};
-    m_ambientCoeff = {-0.00621661, 1.13212876};
-    m_airTemperature = 20.0; // default air temperature in Celsius
-    m_ambientCorrection = m_ambientCoeff[0] * m_airTemperature + m_ambientCoeff[1];
 }
-
-/* Ambient correction*/
-
-void JetModel::setAirTemperature(double airTemperature)
-{
-    m_airTemperature = airTemperature;
-    m_ambientCorrection = m_ambientCoeff[0] * m_airTemperature + m_ambientCoeff[1];
-}
-
-double JetModel::getAmbientCorrection()
-{
-    return m_ambientCorrection;
-}
-
-void JetModel::getAirTemperature(double* airTemperature)
-{
-    *airTemperature = m_airTemperature;
-}
-
-/* u2T model */
 
 double JetModel::compute_f(double T, double Tdot)
 {
@@ -86,19 +63,14 @@ double JetModel::compute_v(double u)
     return u + m_u2TCoeff[12] * pow(u, 2.0);
 }
 
-double JetModel::Tddot(double T, double Tdot, double u)
-{
-    return compute_f(T, Tdot) + compute_g(T, Tdot) * compute_v(u);
-}
-
 double JetModel::standardizeThrust_u2T(double thrust)
 {
-    return (thrust / m_ambientCorrection - m_u2Tnormalization[0]) / m_u2Tnormalization[1];
+    return (thrust - m_u2Tnormalization[0]) / m_u2Tnormalization[1];
 }
 
 double JetModel::standardizeThrustDot_u2T(double thrustDot)
 {
-    return (thrustDot / m_ambientCorrection) / m_u2Tnormalization[1];
+    return (thrustDot) / m_u2Tnormalization[1];
 }
 
 double JetModel::standardizeThrottle_u2T(double throttle)
@@ -109,13 +81,13 @@ double JetModel::standardizeThrottle_u2T(double throttle)
 double JetModel::destandardizeThrust_u2T(double thrustBar)
 {
     // destandardize thrust value
-    return (thrustBar * m_u2Tnormalization[1] + m_u2Tnormalization[0]) * m_ambientCorrection;
+    return (thrustBar * m_u2Tnormalization[1] + m_u2Tnormalization[0]);
 }
 
 double JetModel::destandardizeThrustDot_u2T(double thrustDotBar)
 {
     // destandardize thrust derivative value
-    return thrustDotBar * m_u2Tnormalization[1] * m_ambientCorrection;
+    return thrustDotBar * m_u2Tnormalization[1];
 }
 
 double JetModel::destandardizeThrottle_u2T(double v)

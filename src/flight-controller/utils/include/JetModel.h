@@ -17,52 +17,21 @@ public:
      */
     JetModel();
 
-    /* Ambient correction*/
-
-    /**
-     * @brief Set the air temperature parameter value.
-     * @return None.
-     */
-    void setAirTemperature(double airTemperature);
-    /**
-     * @brief Get the air temperature parameter value.
-     * @return None.
-     */
-    void getAirTemperature(double* airTemperature);
-    /**
-     * @brief Get the ambient correction value.
-     * @return ambient correction value.
-     */
-    double getAmbientCorrection();
-
-    /* u2T model */
-
     /**
      * @brief Compute the value of the function f given T and Tdot
-     * refer to
-     * https://github.com/ami-iit/element_sim2real-bridge/issues/109#issuecomment-2468338870
      * @return f value.
      */
     double compute_f(double T, double Tdot);
     /**
      * @brief Compute the value of the function g given T and Tdot
-     * refer to
-     * https://github.com/ami-iit/element_sim2real-bridge/issues/109#issuecomment-2468338870
      * @return g value.
      */
     double compute_g(double T, double Tdot);
     /**
      * @brief Compute the value of the function v given u
-     * refer to
-     * https://github.com/ami-iit/element_sim2real-bridge/issues/109#issuecomment-2468338870
      * @return v value.
      */
     double compute_v(double u);
-    /**
-     * @brief Compute Tddot from the throttle u applying the identified dynamics.
-     * @return Tddot value.
-     */
-    double Tddot(double T, double Tdot, double u);
     /**
      * @brief Standardize the thrust value for the u2T model.
      * @return None.
@@ -121,9 +90,6 @@ public:
 
 private:
     // parameters of models
-    double m_airTemperature;
-    double m_ambientCorrection;
-    std::vector<double> m_ambientCoeff;
     std::vector<double> m_u2TCoeff;
     std::vector<double> m_u2Tnormalization;
 };
