@@ -8,7 +8,7 @@ Davide Gorbani , Giuseppe L'Erario, Hosameldin Awadalla Omer Mohamed, Daniele Pu
 <br>
 
 <div align="center">
-📅 Accepted for publication at the <b>2025 IEEE-RAS International Conference on Humanoid Robots</b> (Humanoids), Seul, South Korea 🤖
+📅 Accepted for publication at the <b>2025 IEEE-RAS International Conference on Humanoid Robots</b> (Humanoids), Seoul, South Korea 🤖
 </div>
 <br>
 
