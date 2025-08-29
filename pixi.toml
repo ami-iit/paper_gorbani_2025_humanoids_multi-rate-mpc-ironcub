@@ -10,7 +10,7 @@ CMAKE_INSTALL_PREFIX = "$CONDA_PREFIX"
 CMAKE_INSTALL_PREFIX = "%CONDA_PREFIX%\\Library"
 
 [dependencies]
-compilers = "*"
+cxx-compiler = "*"
 cmake = "*"
 make = "*"
 ninja = "*"
@@ -27,11 +27,11 @@ scipy = "*"
 toml = "*"
 hdf5storage = "*"
 
-[tasks]
-configure = "cmake -S . -B build -DCMAKE_INSTALL_PREFIX=$CMAKE_INSTALL_PREFIX"
-build = { cmd = "cmake --build build -j$(nproc)", depends-on = ["configure"] }
-install = { cmd = "cmake --install build", depends-on = ["build"] }
-install-mujoco-lib = { cmd = "pip install ./src/mujoco_lib", depends-on = ["install"] }
-run-simulation = { cmd = "python src/variable_sampling_mpc.py", depends-on = ["install-mujoco-lib"] }
+[pypi-dependencies]
+ironcub_mujoco_lib= { path = "./src/mujoco_lib" }
 
-# Task to install the mujoco_lib Python package
+[tasks]
+configure = "cmake -S . -B build -GNinja -DCMAKE_INSTALL_PREFIX=$CMAKE_INSTALL_PREFIX"
+build = { cmd = "cmake --build build", depends-on = ["configure"] }
+install = { cmd = "cmake --install build", depends-on = ["build"] }
+run-simulation = { cmd = "python src/variable_sampling_mpc.py", depends-on = ["install"] }
