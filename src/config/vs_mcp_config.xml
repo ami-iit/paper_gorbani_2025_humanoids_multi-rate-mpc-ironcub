@@ -32,11 +32,11 @@
       <param name="weightRegularizationJointPos">20.0</param>
 
       <group name="TRAJECTORY_MANAGER">
-        <param name="trajectoryFile">"alphaGravity.mat"</param>
+        <param name="trajectoryFile">"src/trajectories/alphaGravity.mat"</param>
       </group>
 
       <group name="POSITION_TRAJECTORY">
-        <param name="trajectoryFile">"minimumJerkTrajectory.mat"</param>
+        <param name="trajectoryFile">"src/trajectories/minimumJerkTrajectory.mat"</param>
       </group>
 
       <param name="throttleMin">0.0</param>
