@@ -14,7 +14,6 @@ Davide Gorbani , Giuseppe L'Erario, Hosameldin Awadalla Omer Mohamed, Daniele Pu
 
 <div align="center">
    <a href="https://arxiv.org/abs/2505.16478"><b>📚 arXiv</b></a> &nbsp;&nbsp;&nbsp;
-    <a href="#Installation"><b>🔧 Installation</b></a> &nbsp;&nbsp;&nbsp;
     <a href="#Usage"><b>🔧 Usage</b></a>
 </div>
 <be>
@@ -23,40 +22,25 @@ Davide Gorbani , Giuseppe L'Erario, Hosameldin Awadalla Omer Mohamed, Daniele Pu
 https://github.com/user-attachments/assets/4ad12276-6a8e-4b0a-91a7-b82744aea77c
 
 
-## Installation
 
-Clone this repo:
-```sh
-git clone https://github.com/ami-iit/paper_gorbani_2025_humanoids_multi-rate-mpc-ironcub
-```
+## Dependency
 
-Create the `conda` environment:
-```sh
-cd paper_gorbani_2025_humanoids_multi-rate-mpc-ironcub
-conda env create -f environment.yml
-```
-
-Install the repo [ironcub-models](https://github.com/ami-iit/ironcub-models) and then install this repo:
-```sh
-mkdir build
-cd build
-ccmake ..
-make install
-```
-
-Then, to source the `setup.sh` file, run:
-```sh
-source <path/to/install/folder>/share/setup.sh
-```
+The only external dependency required is the [ironcub-models](https://github.com/ami-iit/ironcub-models) repository. Please clone and install it following the instructions in its README before running any simulation.
 
 ## Usage
 
-To run a simulation, open a terminal, navigate to the root folder of this repo and run:
-```sh
-python src/variable_sampling_mpc.py
-```
+This project uses [pixi](https://prefix.dev/docs/pixi) for environment and dependency management. To run the simulation:
 
-## Maintainers
+1. (If not already done) Install the `ironcub-models` repository as described above.
+
+2. Run the simulation:
+  ```bash
+  pixi run run-simulation
+  ```
+
+This will execute the python script to run the Mujoco simulation.
+
+## Maintainer
 
 <table>
   <tr>

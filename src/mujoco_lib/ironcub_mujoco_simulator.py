@@ -6,13 +6,12 @@ import copy
 from flight_ctrl_lib.bindings import Robot
 from scipy.spatial.transform import Rotation
 import bipedal_locomotion_framework.bindings as blf
-import toml
 import numpy as np
 import idyntree.swig as idyn
 
-from nn_jet_model import JetModelTotal
+from .nn_jet_model import JetModelTotal
 import torch
-from jet_kalman_filter import EKFJetsTotal
+from .jet_kalman_filter import EKFJetsTotal
 
 import resolve_robotics_uri_py
 
