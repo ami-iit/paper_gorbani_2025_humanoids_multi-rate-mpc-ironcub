@@ -50,3 +50,10 @@
 *.TXT
 
 *.mat
+
+# pixi environments
+.pixi
+*.egg-info
+
+# Hide pycache folders
+__pycache__
