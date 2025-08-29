@@ -32,6 +32,6 @@ configure = "cmake -S . -B build -DCMAKE_INSTALL_PREFIX=$CMAKE_INSTALL_PREFIX"
 build = { cmd = "cmake --build build -j$(nproc)", depends-on = ["configure"] }
 install = { cmd = "cmake --install build", depends-on = ["build"] }
 install-mujoco-lib = { cmd = "pip install ./src/mujoco_lib", depends-on = ["install"] }
-run-simulation = { cmd = "python3 src/variable_sampling_mpc.py", depends-on = ["install-mujoco-lib"] }
+run-simulation = { cmd = "python src/variable_sampling_mpc.py", depends-on = ["install-mujoco-lib"] }
 
 # Task to install the mujoco_lib Python package
