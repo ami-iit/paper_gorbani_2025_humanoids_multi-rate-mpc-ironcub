@@ -23,9 +23,6 @@ if __name__ == "__main__":
     robot_config_file = Path(__file__).parents[0] / "config/robot.toml"
     configSim.config["robot_config_file"] = str(robot_config_file)
 
-    xml_path = rf.findFileByName("iRonCub-Mk3_Mujoco/iRonCub.xml")
-    configSim.config["mujoco_model_path"] = str(xml_path)
-
     run_viz = True
     n_iter = 10000
     sim = MujocoSim(configSim, run_visulaization=run_viz)
