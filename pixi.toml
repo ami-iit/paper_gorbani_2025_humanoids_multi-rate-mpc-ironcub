@@ -28,8 +28,7 @@ scipy = "*"
 toml = "*"
 hdf5storage = "*"
 # Workaround until https://github.com/conda-forge/staged-recipes/pull/30690 is merged
-# Once pixi-build support is added to ironcub-models, we need to switch to a tag
-ironcub-models = { git = "https://github.com/traversaro/ironcub-models.git", branch = "addpixibuild" }
+ironcub-models = { git = "https://github.com/ami-iit/ironcub-models.git", tag = "v0.0.2" }
 
 [pypi-dependencies]
 ironcub_mujoco_lib= { path = "./src/mujoco_lib" }

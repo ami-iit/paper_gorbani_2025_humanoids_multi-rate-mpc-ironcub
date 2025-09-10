@@ -98,7 +98,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/imath-3.1.12-h7955e40_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_resources-6.5.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/ipopt-3.14.17-h7fd866c_2.conda
-      - conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+      - conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
         subdir: linux-64
       - conda: https://conda.anaconda.org/conda-forge/linux-64/irrlicht-1.8.5-hcce6d95_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/jasper-4.2.8-he3c4edf_0.conda
@@ -470,7 +470,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/imath-3.1.12-hf428078_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_resources-6.5.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/ipopt-3.14.17-h06296af_2.conda
-      - conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+      - conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
         subdir: linux-aarch64
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/irrlicht-1.8.5-hc10942e_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/jasper-4.2.8-h27a9ab5_0.conda
@@ -829,7 +829,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/imath-3.1.12-h025cafa_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_resources-6.5.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/ipopt-3.14.17-h945cc1c_2.conda
-      - conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+      - conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
         subdir: osx-arm64
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/irrlicht-1.8.5-hdfd4c6d_5.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/jasper-4.2.8-hc0e5025_0.conda
@@ -1123,7 +1123,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/importlib_resources-6.5.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/intel-openmp-2024.2.1-h57928b3_1083.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/ipopt-3.14.17-h812a801_2.conda
-      - conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+      - conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
         build: h9352c13_0
       - conda: https://conda.anaconda.org/conda-forge/win-64/irrlicht-1.8.5-h20dfb44_5.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/jasper-4.2.8-h8ad263b_0.conda
@@ -5259,7 +5259,7 @@ packages:
   purls: []
   size: 939947
   timestamp: 1745420480246
-- conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+- conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
   name: ironcub-models
   version: 0.0.2
   build: h9352c13_0
@@ -5270,7 +5270,7 @@ packages:
   - vc14_runtime >=14.29.30139
   - ucrt >=10.0.20348.0
   channel: null
-- conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+- conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
   name: ironcub-models
   version: 0.0.2
   build: hbf21a9e_0
@@ -5280,7 +5280,7 @@ packages:
   - libstdcxx >=15
   - libgcc >=15
   channel: null
-- conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+- conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
   name: ironcub-models
   version: 0.0.2
   build: hbf21a9e_0
@@ -5290,7 +5290,7 @@ packages:
   - libstdcxx >=15
   - libgcc >=15
   channel: null
-- conda: git+https://github.com/traversaro/ironcub-models?branch=addpixibuild#29609535668831ddd30499d66f8bb827d8321741
+- conda: git+https://github.com/ami-iit/ironcub-models?tag=v0.0.2#a33e518b78d2e26c621c0454aa1f9f22a6e21f7b
   name: ironcub-models
   version: 0.0.2
   build: hbf21a9e_0
