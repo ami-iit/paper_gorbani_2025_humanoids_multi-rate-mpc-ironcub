@@ -23,22 +23,18 @@ https://github.com/user-attachments/assets/4ad12276-6a8e-4b0a-91a7-b82744aea77c
 
 
 
-## Dependency
-
-The only external dependency required is the [ironcub-models](https://github.com/ami-iit/ironcub-models) repository. Please clone and install it following the instructions in its README before running any simulation.
 
 ## Usage
 
 This project uses [pixi](https://prefix.dev/docs/pixi) for environment and dependency management. To run the simulation:
 
-1. (If not already done) Install the `ironcub-models` repository as described above.
 
-2. Run the simulation:
-  ```bash
-  pixi run run-simulation
-  ```
+Run the simulation:
+```bash
+pixi run run-simulation
+```
 
-This will execute the python script to run the Mujoco simulation.
+This will execute the python script to run the Mujoco simulation of the iRonCub robot.
 
 ## Maintainer
 
