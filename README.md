@@ -16,7 +16,7 @@ Davide Gorbani , Giuseppe L'Erario, Hosameldin Awadalla Omer Mohamed, Daniele Pu
    <a href="https://arxiv.org/abs/2505.16478"><b>📚 arXiv</b></a> &nbsp;&nbsp;&nbsp;
     <a href="#Usage"><b>🔧 Usage</b></a>
 </div>
-<be>
+<br>
 
 
 https://github.com/user-attachments/assets/4ad12276-6a8e-4b0a-91a7-b82744aea77c
