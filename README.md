@@ -26,7 +26,11 @@ https://github.com/user-attachments/assets/4ad12276-6a8e-4b0a-91a7-b82744aea77c
 
 ## Usage
 
-This project uses [pixi](https://prefix.dev/docs/pixi) for environment and dependency management. To run the simulation:
+> [!IMPORTANT]
+>
+> The installation has been tested on Ubuntu 22.04
+
+This project uses [pixi](https://pixi.sh/latest/) for environment and dependency management; check [here](https://pixi.sh/latest/installation/) for how to install it. To run the simulation:
 
 
 Run the simulation:
