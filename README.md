@@ -15,7 +15,7 @@ Davide Gorbani , Giuseppe L'Erario, Hosameldin Awadalla Omer Mohamed, Daniele Pu
 <div align="center">
     <a href="https://ieeexplore.ieee.org/document/11203062"><b>📜 Paper</b></a> &nbsp;&nbsp;&nbsp;
     <a href="https://arxiv.org/abs/2505.16478"><b>📚 arXiv</b></a> &nbsp;&nbsp;&nbsp;
-    <a href="https://github.com/ami-iit/paper_gorbani_2025_humanoids_multi-rate-mpc-ironcub/blob/main/misc/poster/humanoids-2024-dnn-mpc.pdf"><b>🖼️ Poster</b></a> &nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/ami-iit/paper_gorbani_2025_humanoids_multi-rate-mpc-ironcub/blob/main/misc/poster/posterHumanoids.pdf"><b>🖼️ Poster</b></a> &nbsp;&nbsp;&nbsp;
     <a href="#Usage"><b>🔧 Usage</b></a>
 </div>
 <br>
